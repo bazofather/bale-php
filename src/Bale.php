@@ -41,9 +41,34 @@ class BaleBot
      */
     private $base_file_url  = 'https://tapi.bale.ai/file/';
 
+    private $actions = [
+        'sendMessage',
+        'editMessageText',
+        'deleteMessage',
+        'getupdates',
+        'setWebhook',
+        'deleteWebhook',
+        'getme',
+        'SendPhoto',
+        'Sendaudio',
+        'Senddocument',
+        'Sendvideo',
+        'Sendvoice',
+        'sendLocation',
+        'sendContact',
+        'getfile',
+        'getchat',
+        'getChatAdministrators',
+        'getChatMembersCount',
+        'getChatMember',
+        'sendInvoice',
+        'getChatMembersCount',
+        'getChatMembersCount',
+        'getChatMembersCount',
+    ];
+
     public function __construct()
     {
-        
     }
 
     public function setToken(string $token)
@@ -55,5 +80,21 @@ class BaleBot
     public function token(): string
     {
         return $this->token;
+    }
+
+    public function sendMessage()
+    {
+        $url = $this->url('sendMessage');
+    }
+
+    public function url($action): string
+    {
+        $acts = $this->validateAction($action);
+        return "$this->base_api_url/bot$this->token/$acts";
+    }
+
+    public function validateAction(string $action): bool
+    {
+        return in_array($action, $this->actions);
     }
 }
