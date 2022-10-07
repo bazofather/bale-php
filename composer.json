@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Bazofather\\BaleBot\\": "./src"
+            "Bazofather\\Bale\\": "./src"
         },
         "files": [
             "./src/helpers.php"
