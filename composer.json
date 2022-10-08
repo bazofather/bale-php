@@ -1,7 +1,6 @@
 {
     "name": "bazofather/bale-php",
     "description": "bale messenger bot sdk in php",
-    "version": "0.1.0",
     "homepage": "https://github.com/bazofather/bale-php",
     "keywords": [
         "bot",
@@ -22,11 +21,11 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.0",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "symfony/http-client": "^6.0"
+        "bazofather/interface": "^0.1.2"
     },
     "autoload": {
         "psr-4": {
@@ -44,7 +43,6 @@
         "optimize-autoloader": true
     },
     "type": "library",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "minimum-stability": "stable",
     "license": "MIT"
 }
